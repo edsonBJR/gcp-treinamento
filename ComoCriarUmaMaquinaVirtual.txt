@@ -1,1 +1,137 @@
 Como Criar um Máquina Virtual
+
+
+Tópicos
+
+  1 - Visão Geral
+  2 - Configuração
+  3 - Tarefa 1: Crie uma nova instância no Console do Cloud
+  4 - Tarefa 2: Instale um servidor da Web NGINX
+  5 - Tarefa 3: Crie uma instância com a gcloud
+  7 - Teste seus conhecimentos
+
+
+
+  1 - Visão Geral
+
+  O Compute Engine permite criar máquinas virtuais que executam diversos sistemas operacionais,
+  incluindo vários tipos de Linux (Debian, Ubuntu, Suse, Red Hat e CoreOS) e
+  Windows Server na infraestrutura do Google. Você pode executar milhares de CPUs
+  virtuais em um sistema projetado para ser rápido e oferecer consistência forte no desempenho.
+
+  Neste laboratório prático, você criará instâncias de máquina
+  virtual de vários tipos usando o Console do Google Cloud e a linha de comando gcloud.
+  Além disso, você verá como conectar um servidor da Web NGINX à sua máquina virtual.
+
+  Em vez de copiar e colar os comandos do laboratório no local adequado,
+  recomendamos que você digite os comandos para reforçar sua compreensão dos
+  conceitos principais.
+
+    Atividades deste laboratório
+    1.1 - Criar uma máquina virtual com o Console do Cloud
+
+    1.2 - Criar uma máquina virtual com a linha de comando gcloud
+
+    1.3 - Implantar um servidor da Web e conectá-lo a uma máquina virtual
+
+
+
+    Configuração
+      Antes de clicar no botão Start Lab
+      Leia estas instruções. Os laboratórios são cronometrados e não podem ser pausados.
+      O timer é iniciado quando você clica em Começar o laboratório e mostra por quanto
+      tempo os recursos do Google Cloud ficarão disponíveis.
+
+      Este laboratório prático do Qwiklabs permite que você realize as
+      atividades em um ambiente real de nuvem, não em uma simulação ou demonstração.
+      Você receberá novas credenciais temporárias para fazer login e acessar o Google Cloud
+      durante o laboratório.
+
+
+      O que é necessário
+      Para fazer este laboratório, você precisa ter:
+
+      acesso a um navegador de Internet padrão (recomendamos o Chrome);
+      tempo para concluir as atividades.
+      Observação: não use seu projeto ou sua conta do Google Cloud neste laboratório.
+
+      Observação: se estiver usando um dispositivo Chrome OS,
+      abra uma janela anônima para executar o laboratório.
+
+    Como começar o laboratório e fazer login no Console
+      1 - Clique no botão Começar o laboratório.
+          Se for preciso pagar pelo laboratório, você verá um pop-up para selecionar
+          a forma de pagamento. Um painel é exibido à esquerda contendo as
+          credenciais temporárias que você deve usar para o laboratório.
+
+      2 - Copie o nome de usuário e clique em Abrir Console do Google.
+          O laboratório inicia os recursos e depois abre a página Escolher
+          uma conta em outra guia.
+
+        Dica: abra as guias em janelas separadas, lado a lado.
+
+      3 - Na página "Escolher uma conta", clique em Usar outra conta.
+
+      4 - A página de login é aberta. Cole o nome de usuário que foi copiado do painel
+      "Detalhes da conexão". Em seguida, copie e cole a senha.
+
+        Importante: é preciso usar as credenciais do painel "Detalhes da conexão".
+        Não use as credenciais do Qwiklabs. Não use sua conta pessoal do GCP, caso tenha uma,
+        neste laboratório (isso evita cobranças).
+
+      5 - Acesse as próximas páginas:
+
+          Aceite os Termos e Condições.
+          Não adicione opções de recuperação nem autenticação de dois
+          fatores (porque essa é uma conta temporária).
+          Não se inscreva em avaliações gratuitas.
+          Depois de alguns instantes, o Console do GCP será aberto nesta guia.
+
+          Observação: para ver o menu com uma lista dos produtos e serviços do GCP,
+          clique em Menu de navegação no canto superior esquerdo,
+          ao lado de "Google Cloud Platform".
+
+      Ative o Google Cloud Shell
+
+      O Google Cloud Shell é uma máquina virtual com ferramentas de desenvolvimento.
+      Ele conta com um diretório principal permanente de 5 GB e é executado no Google Cloud.
+      O Google Cloud Shell permite acesso de linha de comando aos seus recursos do GCP.
+
+      1 - No Console do GCP, na barra de ferramentas superior direita,
+      clique no botão Abrir o Cloud Shell.
+
+      2 - Clique em Continue(continuar):
+
+
+      Cloud Shell
+        Google Cloud Shell provides you with command-line access to your cloud resources directly
+        from your browser. You can easily manage your projects and resources without having to
+        install the Google Cloud SDK or other tools on your system.
+
+      Demora alguns minutos para provisionar e conectar-se ao ambiente.
+      Quando você está conectado, você já está autenticado e o projeto é definido como
+      seu PROJECT_ID . Por exemplo:
+
+      gcloud é a ferramenta de linha de comando do Google Cloud Platform.
+      Ele vem pré-instalado no Cloud Shell e aceita preenchimento com tabulação.
+
+      Agora vamos de comandos...
+
+      É possível listar o nome da conta ativa com este comando:
+
+        gcloud auth list
+
+      É possível listar o ID de projeto com este comando:
+
+        glcoud config list project
+
+      A documentação completa do gcloud está disponível na página Visão geral do gcloud do Google Cloud.
+      https://cloud.google.com/sdk/gcloud
+
+      O que são as regiões e zonas
+
+      Alguns recursos do Compute Engine estão em regiões ou zonas.
+      As regiões são localizações geográficas específicas em que você
+      pode executar seus recursos. Todas elas têm uma ou mais zonas.
+      Por exemplo, a região us-central1 é referente à área geográfica dos Estados
+      Unidos que contém as zonas us-central1-a, us-central1-b, us-central1-c e us-central1-f.
