@@ -1,0 +1,395 @@
+Google Cloud Plataform
+
+  O Google Cloud é um pacote de serviços de nuvem hospedado na
+infraestrutura do Google.
+  Nele temos APIs e vários serviços -> armazenamento, computação,
+análise de dados, machine learning e rede.
+  Podem ser integrados a aplicativos ou projetos de computação
+em nuvem, pessoais ou empresariais.
+  Nesse laboratório vamos começar a utilizar o Google Cloud com o
+Console do Cloud, uma IU para navegador da WEB ondem podemos gerenciar os
+serviços do Google Cloud.
+
+  O que vamos aprender nesse laboratório:
+
+    a plataforma Qwiklabs e a identificar os principais recursos
+    de um ambiente de laboratório;
+
+    os créditos do Qwiklabs, a comprar créditos e a iniciar uma
+    instância de laboratório;
+
+    a acessar o Console do Cloud com credenciais específicas;
+
+    os projetos do Google Cloud e a identificar equívocos comuns
+    relacionados a eles;
+
+    usar o menu de navegação do Google Cloud para identificar
+    os tipos de serviços;
+
+    sobre papéis primários e como usar o serviço Cloud IAM para saber
+    quais ações usuários específicos podem executar;
+
+    a biblioteca de APIs e como analisar os principais
+    recursos que ela oferece;
+
+  RECURSOS E COMPONENTES
+
+  Botão "Começar o laboratório"
+
+    cria um ambiente temporário do Google Cloud, com todos os serviços
+    e credenciais necessários ativados, para poder praticar com o material
+    do laboratório. Essa ação também inicia um timer de contagem
+    regressiva.
+
+  Crédito
+
+    1 crédito equivale a 1 dólar americano. Quanto mais créditos
+    você compra, maior é o desconto. Alguns laboratórios de nível
+    introdutório (como este) são gratuitos. Os laboratórios
+    especializados custam mais, porque envolvem tarefas de computação
+    mais complexas e que exigem mais recursos do Google Cloud.
+
+  Tempo
+
+    o tempo que você tem para concluir um laboratório.
+    Quando você clica no botão "Começar o laboratório", o timer
+    inicia a contagem regressiva até atingir 00:00:00. Quando isso
+    acontece, seu ambiente e os recursos temporários do Google Cloud
+    são excluídos. O tempo é suficiente para concluir um laboratório,
+    mas evite realizar outras tarefas enquanto ele estiver em execução,
+    porque você pode perder todo o trabalho.
+
+  Pontuação
+
+    Esse recurso é chamado de "rastreamento de atividades" e
+    confirma que você concluiu as etapas especificadas em um laboratório.
+    Você precisa concluir todas as etapas na ordem em que aparecem
+    para ter aprovação em um laboratório com rastreamento de atividades.
+    Só depois disso você vai receber o crédito pela conclusão.
+
+
+  COMO PAGAR POR UM LABORATÓRIO
+
+  Alguns laboratórios são gratuitos, mas outros são pagos.
+  Quando você clica no botão "Começar o laboratório", uma caixa de
+  diálogo mostra a opção de iniciar o laboratório com um código de
+  acesso ou créditos. Se você não tiver nenhum dos dois, clique em
+  Comprar créditos e siga as instruções.
+
+  ONDE ENCONTRAR AS INSTRUÇÕES
+
+  A guia atual do navegador contém as instruções do laboratório.
+  Quando você inicia um laboratório, o ambiente dele, a interface
+  do usuário do Console do Google Cloud neste caso, é aberto em uma
+  nova guia do navegador. Você precisa alternar entre as duas guias
+  para ler as instruções e realizar as tarefas.
+  Dependendo da configuração do seu computador, você também pode
+  exibir cada uma das guias em monitores separados.
+
+  COMO ACESSAR O CONSOLE DO CLOUD
+
+  Quando o cronômetro iniciar a contagem regressiva e o botão
+  "Começar o laboratório" mudar para o botão vermelho
+  "Terminar o laboratório", você já poderá fazer login no
+  Console do Cloud.
+
+  só clique no botão "Terminar o laboratório" depois de concluir
+  todas as tarefas. Quando você fizer isso, as credenciais temporárias
+  serão invalidadas e não será mais possível acessar o trabalho feito no
+  laboratório. Depois que terminar todas as tarefas, você precisa
+  clicar nesse botão para poder fazer outro laboratório. O Qwiklabs
+  tem proteções para impedir o registro simultâneo.
+
+  PAINEL "DETALHES DA CONEXAO"
+
+  Agora que sua instância de laboratório está em execução,
+  observe o painel esquerdo. Ele contém o botão "Abrir Console
+  do Google", as credenciais (nome de usuário e senha) e o campo
+  "ID do projeto".
+
+  suas credenciais serão parecidas com as da imagem acima,
+  mas não iguais. Cada instância de laboratório gera novas
+  credenciais temporárias.
+
+  Abrir Console do Google
+
+  Esse botão abre o Console do Cloud, que é o console da Web e o
+  hub central de desenvolvimento do Google Cloud. Você vai fazer a
+  maioria das tarefas no Google Cloud usando essa interface. Todos
+  os Qwiklabs sobre o Google Cloud usam o Console do Cloud.
+
+  ID do projeto
+
+  Um projeto do Google Cloud é uma entidade que organiza os recursos
+  do Google Cloud. Ele geralmente contém recursos e serviços,
+  por exemplo: um pool de máquinas virtuais, um conjunto de bancos
+  de dados e uma rede que conecta isso tudo. Os projetos também
+  contêm configurações e permissões que especificam regras de
+  segurança e quem tem acesso a quais recursos.
+
+  O ID do projeto é um identificador exclusivo usado para
+  vincular os recursos e as APIs do Google Cloud a um projeto.
+  Esses IDs são únicos no Google Cloud. Como só pode haver um
+  qwiklabs-gcp-xxx...., ele é globalmente identificável.
+
+  Nome de usuário e senha
+
+  São credenciais que representam uma identidade no serviço
+  Cloud Identity and Access Management (Cloud IAM).
+  Essa identidade tem permissões (um ou mais papéis)
+  que dão acesso aos recursos do Google Cloud no projeto alocado
+  para você. Essas credenciais são temporárias e só funcionarão
+  durante o tempo do laboratório. Quando o timer atingir 00:00:00,
+  você não vai ter mais acesso ao projeto do Google Cloud com essas
+  credenciais.
+
+  Tarefa 1: faça login no Google Cloud
+
+  1 - Clique em Abrir Console do Google
+  Dica: abra as guias em janelas separadas, lado a lado.
+  Clique em usar outra conta.
+
+  2 - Copie o Nome de usuário do painel "Detalhes da conexão",
+  cole-o no campo E-mail ou telefone e clique em Avançar.
+  Atenção: não use seu endereço de e-mail pessoal ou corporativo
+  para fazer login. Use o e-mail googlexxxxxx_student@qwiklabs.net.
+
+  O nome de usuário com o formato googlexxxxxx_student@qwiklabs.net
+  é uma Conta do Google criada para você usar como aluno do Qwiklabs.
+  Ele tem o nome de domínio "qwiklabs.net" e papéis do IAM que permitem
+  acessar o projeto provisionado do Google Cloud.
+
+  3 - Copie a Senha do painel "Detalhes da conexão", cole-a no campo
+  Senha e clique em Avançar.
+
+  4 - Clique em Aceitar para indicar que concorda com os Termos de
+  Serviço e a Política de Privacidade do Google.
+
+  5 - Na página Proteja sua conta, clique em Confirmar.
+
+  Como essa é uma conta temporária, não é necessário atualizar
+  números de telefone ou e-mails de recuperação.
+
+  6 - Na página Welcome student!, marque a caixa de seleção
+  de Terms of Service para concordar com os Termos de Serviço
+  do Google Cloud. Depois clique em Agree and continue.
+
+  Você acessou o Console do Cloud com suas credenciais do Qwiklabs.
+  Sua página deverá ser parecida com esta:
+
+  Dashboard - Google Cloud Platform
+
+  Você já fez login no Console do Cloud e entendeu os princípios
+  básicos das credenciais. Está na hora de aprender um pouco mais
+  sobre os projetos do Google Cloud.
+
+  Projetos no Console do Cloud
+
+  Os projetos do Google Cloud foram explicados na seção sobre
+  o conteúdo do painel "Detalhes da conexão".
+
+  Um projeto do Google Cloud é uma entidade que organiza os
+  recursos do Google Cloud. Ele geralmente contém recursos e
+  serviços, por exemplo: um pool de máquinas virtuais, um conjunto
+  de bancos de dados e uma rede que conecta isso tudo. Os projetos
+  também contêm configurações e permissões que especificam regras de
+  segurança e quem tem acesso a quais recursos.
+
+  No canto superior esquerdo do painel central, está o cartão Informações
+  do projeto que tem a seguinte aparência:
+
+  Project Info
+
+  Projetc name
+  qwiklabs-....
+
+  Project ID
+  qwiklabs-gcp-...
+
+  Project number
+  1241234123413
+
+  Go To project settings
+
+  O projeto tem um nome, ID e número. Esses identificadores são
+  usados com frequência na interação com os serviços do Google Cloud.
+  Você está trabalhando com um projeto para ter experiência com um
+  serviço ou recurso específico do Google Cloud.
+
+  Tarefa 2: visualize todos os projetos
+
+  Você tem acesso a mais de um projeto do Google Cloud. Em alguns
+  laboratórios, é possível que você receba mais de um projeto
+  para concluir as tarefas atribuídas.
+
+  1 - Na barra de título do Console do Google Cloud, ao lado do
+  nome do projeto, clique no menu suspenso.
+
+  2 - Na caixa de diálogo Selecionar um projeto, clique em
+  Todos. A lista exibida incluirá o projeto "Qwiklabs Resources".
+
+  Não mude para o projeto "Qwiklabs Resources" neste momento.
+  Você pode poder usá-lo depois em outros laboratórios.
+
+  É comum que grandes empresas ou usuários experientes tenham
+  dezenas ou milhares de projetos do Google Cloud. As organizações
+  usam o Google Cloud de maneiras diferentes. Por isso, os projetos
+  são um bom método para organizar os serviços de computação em nuvem.
+  Essa organização pode ser por equipe ou produto, por exemplo.
+
+  O projeto "Qwiklabs Resources" contém arquivos, conjuntos de dados
+  e imagens de máquina para determinados laboratórios e pode ser
+  acessado de todos os ambientes de laboratório do Google Cloud.
+  É importante observar que esse projeto é compartilhado
+  (somente leitura) com todos os usuários do Qwiklabs, ou seja, ele
+  não pode ser excluído ou modificado.
+
+  Você está trabalhando em um projeto temporáriodo Google Cloud.
+  Isso significa que o projeto e o conteúdo dele serão excluídos
+  quando o laboratório terminar. Ao iniciar outro laboratório, você
+  recebe acesso a um ou mais novos projetos do Google Cloud. Você vai
+  realizar todas as etapas do laboratório nesses projetos, não no
+  projeto "Qwiklabs Resources".
+
+  Menu de navegação e serviços
+
+  A barra de título do Console do Google Cloud também contém um botão
+  com um ícone de três linhas:
+
+  Ao clicar nesse botão, você abre ou oculta o Menu de navegação,
+  que oferece acesso rápido aos principais serviços do Google Cloud.
+
+  Se o menu não estiver aberto, clique no botão e
+  role para ver os tipos de serviço disponíveis:
+
+  Existem sete categorias de serviços do Google Cloud:
+
+  Computação: vários tipos de máquina que aceitam qualquer
+  carga de trabalho. As diferentes opções de computação permitem
+  escolher o controle que você quer ter sobre os detalhes e a
+  infraestrutura operacionais.
+  Armazenamento: armazenamento e opções de bancos de dados para
+  dados estruturados ou não estruturados, relacionais ou não relacionais.
+  Rede: serviços que balanceiam o tráfego de aplicativos e
+  provisionam regras de segurança.
+  Operações de nuvem: conjunto de ferramentas de geração de
+  registros, monitoramento, rastreamento e outras ferramentas de
+  confiabilidade de serviços entre nuvens.
+  Ferramentas: serviços que ajudam desenvolvedores a gerenciar
+  implantações e pipelines de criação de aplicativos.
+  Big Data: serviços que permitem processar e analisar
+  conjuntos de dados grandes.
+  Inteligência artificial: um conjunto de APIs que realizam
+  tarefas específicas de inteligência artificial e machine
+  learning no Google Cloud.
+
+
+  Papéis e permissões
+
+  Você aprendeu que, além dos serviços de computação em nuvem,
+  o Google Cloud também contém uma coleção de permissões e papéis
+  que definem quem tem acesso a quais recursos. Use o serviço Cloud
+  Identity and Access Management (Cloud IAM) para inspecionar e
+  modificar esses papéis e permissões.
+
+  Tarefa 3: visualize seus papéis e permissões
+
+  1 - No Menu de navegação (Menu de navegação), clique em IAM
+  e administrador. A página que contém uma lista de usuários
+  e especifica as permissões e funções concedidas a contas específicas
+  é aberta.
+
+  2 - Encontre o nome de usuário "@qwiklabs"
+  que você usou para fazer login:
+
+  A coluna "Membro" mostra googlexxxxxx_student@qwiklabs.net, que
+  corresponde ao nome de usuário usado para fazer login. Na coluna
+  "Nome", googlexxxxxx_student@qwiklabs.net student é exibido.
+  Na coluna "Papel", está escrito Editor, que é um dos três papéis
+  básicos oferecidos pelo Google Cloud. Os papéis primários definem
+  permissões no nível do projeto e, a menos que especificado de outra
+  maneira, controlam o acesso e o gerenciamento de todos os serviços
+  do Google Cloud.
+
+  A tabela a seguir mostra as definições da documentação de papéis
+  sobre as permissões dos papéis de leitor, editor e proprietário:
+
+  Nome do papel	Permissões
+  papéis/leitor	Permissões para ações
+                somente leitura que não afetam o estado,
+                como ver (mas não modificar) recursos ou dados
+                existentes.
+
+  papéis/editor	Todas as permissões de leitor e permissões
+                para ações que modificam o estado, como a
+                alteração de recursos existentes
+
+  papéis/proprietário	Tem todas as permissões de editor e
+                      para as seguintes ações: gerenciar
+                      papéis e permissões para um projeto e
+                      todos os recursos dentro dele e configurar
+                      o faturamento de um projeto.
+
+  Como editor, você pode criar, modificar e excluir recursos do
+  Google Cloud. No entanto, não é possível adicionar ou excluir
+  membros de projetos do Google Cloud.
+
+  APIs e serviços
+
+  As APIs são uma parte importante do Google Cloud. Assim como
+  os serviços, as mais de 200 APIs de diversas áreas, como
+  administração de empresas e machine learning, são facilmente
+  integradas aos projetos e aplicativos do Google Cloud.
+
+  As APIs são interfaces de programação de aplicativo que você
+  pode chamar diretamente ou nas bibliotecas de cliente. As APIs
+  do Cloud usam os princípios de criação orientados a recursos,
+  conforme descrito no Guia de design de APIs.
+
+  Quando o Qwiklabs provisiona um novo projeto do Google Cloud
+  para uma instância de laboratório, ele ativa a maioria das APIs
+  automaticamente. Assim, você pode começar a trabalhar o quanto
+  antes nas tarefas do laboratório. Você vai precisar ativar algumas
+  APIs por conta própria quando criar seus projetos do Google Cloud
+  fora do Qwiklabs.
+
+  A maioria das APIs do Cloud apresenta informações detalhadas
+  sobre o uso de determinada API no seu projeto, inclusive níveis
+  de tráfego, taxas de erros e até latências. Assim você identifica
+  rapidamente os problemas com os aplicativos que usam os serviços do
+  Google.
+
+  Tarefa 4: veja as APIs disponíveis
+
+  1 - No Menu de navegação (Menu de navegação),
+  clique em APIs e serviços > Biblioteca. No cabeçalho
+  CATEGORIA do painel à esquerda, são exibidas as diferentes
+  categorias disponíveis.
+
+  2 - Na barra de pesquisa de APIs, digite Dialogflow
+  e clique em Dialogflow API. A página com a descrição da
+  API Dialogflow é aberta.
+
+  Com a API Dialogflow, você pode criar aplicativos de conversação
+  avançados (por exemplo, para o Google Assistente) sem precisar
+  entender os esquemas subjacentes de machine learning e de
+  linguagem natural.
+
+  3 - Clique em Ativar. A página com a descrição da
+  API Dialogflow será exibida.
+
+  4 - Clique no botão "Voltar" do navegador para verificar
+  se a API está ativada.
+
+  5 - Clique em Testar esta API. Uma nova guia do navegador
+  mostrará a documentação da API Dialogflow. Leia as informações
+  e feche a guia quando terminar.
+
+  6 - Para retornar à página principal do Console do Cloud,
+  clique em Página inicial no Menu de navegação.
+
+  Se você quiser saber mais sobre APIs, abra a nova
+  ferramenta prática no Google Cloud, chamada APIs Explorer
+  do Google. O Google também tem um laboratório chamado APIs
+  Explorer: Qwik Start, que proporciona experiência prática
+  com a ferramenta usando um exemplo simples.
